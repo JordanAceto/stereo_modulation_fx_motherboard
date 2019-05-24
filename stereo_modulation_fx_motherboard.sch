@@ -1996,4 +1996,6 @@ Wire Wire Line
 	15150 2450 15150 2650
 Wire Wire Line
 	15150 2650 15700 2650
+Text Notes 2950 13300 0    50   ~ 0
+maybe add a "wet polarity" jumper?\n\nneeds a way to invert one of the signals\nin the dry/wet mix.\n\nor add a panel switch/change it in software?\n\n-OR- make sure to get the polarity of the wet \nsignal right on the plug in boards, but I already \nmessed that up with the optical phasor boards.\n\nanother rev wouldn't be the end of the world...
 $EndSCHEMATC
