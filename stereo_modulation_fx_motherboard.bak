@@ -879,7 +879,7 @@ Text GLabel 9400 7750 0    50   Input ~ 0
 SPI_DATA_OUT
 Text GLabel 9450 6050 0    50   Input ~ 0
 DAC_A_select
-Text GLabel 7950 3400 0    50   Input ~ 0
+Text GLabel 7950 3100 0    50   Input ~ 0
 DAC_A_select
 Text GLabel 9400 7850 0    50   Input ~ 0
 DAC_B_select
@@ -1870,7 +1870,7 @@ Wire Wire Line
 	16200 2200 16600 2200
 Connection ~ 16200 2200
 Wire Wire Line
-	16600 2650 16200 2650
+	16600 2650 16550 2650
 Wire Wire Line
 	16200 2650 16200 2600
 Wire Wire Line
@@ -2424,4 +2424,11 @@ F 3 "" H 13350 14500 50  0001 C CNN
 $EndComp
 Text GLabel 13350 14400 0    50   Input ~ 0
 output_B
+Wire Wire Line
+	16600 2500 16550 2500
+Wire Wire Line
+	16550 2500 16550 2650
+Connection ~ 16550 2650
+Wire Wire Line
+	16550 2650 16200 2650
 $EndSCHEMATC

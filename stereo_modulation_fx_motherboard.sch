@@ -805,17 +805,6 @@ sweep_mode_switch_1
 Text GLabel 7950 1900 0    50   Input ~ 0
 sweep_mode_switch_2
 $Comp
-L Analog_DAC:MCP4812 U3
-U 1 1 5CF10645
-P 9950 5850
-F 0 "U3" H 9700 6200 50  0000 C CNN
-F 1 "MCP4812" H 10200 6200 50  0000 C CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 10750 5550 50  0001 C CNN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20002249B.pdf" H 10750 5550 50  0001 C CNN
-	1    9950 5850
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GNDREF #PWR0105
 U 1 1 5CF4D8ED
 P 9950 6350
@@ -827,22 +816,11 @@ F 3 "" H 9950 6350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Analog_DAC:MCP4812 U4
-U 1 1 5CF566EA
-P 9900 7650
-F 0 "U4" H 9650 8000 50  0000 C CNN
-F 1 "MCP4812" H 10150 8000 50  0000 C CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 10700 7350 50  0001 C CNN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20002249B.pdf" H 10700 7350 50  0001 C CNN
-	1    9900 7650
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:+3.3V #PWR0106
 U 1 1 5CF566F4
 P 9900 7250
 F 0 "#PWR0106" H 9900 7100 50  0001 C CNN
-F 1 "+3.3V" H 9750 7350 50  0000 C CNN
+F 1 "+3.3V" H 9600 7250 50  0000 C CNN
 F 2 "" H 9900 7250 50  0001 C CNN
 F 3 "" H 9900 7250 50  0001 C CNN
 	1    9900 7250
@@ -879,7 +857,7 @@ Text GLabel 9400 7750 0    50   Input ~ 0
 SPI_DATA_OUT
 Text GLabel 9450 6050 0    50   Input ~ 0
 DAC_A_select
-Text GLabel 7950 3400 0    50   Input ~ 0
+Text GLabel 7950 3100 0    50   Input ~ 0
 DAC_A_select
 Text GLabel 9400 7850 0    50   Input ~ 0
 DAC_B_select
@@ -1129,7 +1107,7 @@ L power:+3.3V #PWR0104
 U 1 1 5CF40A87
 P 9950 5450
 F 0 "#PWR0104" H 9950 5300 50  0001 C CNN
-F 1 "+3.3V" H 9800 5550 50  0000 C CNN
+F 1 "+3.3V" H 9600 5450 50  0000 C CNN
 F 2 "" H 9950 5450 50  0001 C CNN
 F 3 "" H 9950 5450 50  0001 C CNN
 	1    9950 5450
@@ -2431,4 +2409,26 @@ Wire Wire Line
 Connection ~ 16550 2650
 Wire Wire Line
 	16550 2650 16200 2650
+$Comp
+L Analog_DAC:MCP4822 U3
+U 1 1 5CF0D768
+P 9950 5850
+F 0 "U3" H 9950 6431 50  0000 C CNN
+F 1 "MCP4822" H 10200 6250 50  0000 C CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 10750 5550 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20002249B.pdf" H 10750 5550 50  0001 C CNN
+	1    9950 5850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Analog_DAC:MCP4822 U4
+U 1 1 5CF15BA5
+P 9900 7650
+F 0 "U4" H 9900 8231 50  0000 C CNN
+F 1 "MCP4822" H 10150 8050 50  0000 C CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 10700 7350 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20002249B.pdf" H 10700 7350 50  0001 C CNN
+	1    9900 7650
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
