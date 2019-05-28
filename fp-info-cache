@@ -1,4 +1,4 @@
-15950371175433774
+15953489122375774
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -65688,7 +65688,21 @@ CC3-0512DF-E
 9
 9
 stereo_modulation_fx_motherboard_custom_footprints
+DPDT_on_on_on
+
+
+0
+6
+6
+stereo_modulation_fx_motherboard_custom_footprints
 NKK_M201xSS1W03
+
+
+0
+3
+3
+stereo_modulation_fx_motherboard_custom_footprints
+SPDT_on_on
 
 
 0
