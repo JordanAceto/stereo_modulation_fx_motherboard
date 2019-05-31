@@ -10,7 +10,7 @@ Date "2019-05-26"
 Rev "1"
 Comp ""
 Comment1 ""
-Comment2 ""
+Comment2 "creativecommons.org/licenses/by/4.0/"
 Comment3 "License: CC by 4.0"
 Comment4 "Author: Jordan Aceto"
 $EndDescr
@@ -563,11 +563,11 @@ F 3 "http://www.ti.com/lit/ds/symlink/cd74hc4067.pdf" H 3050 7800 50  0001 C CNN
 $EndComp
 Text GLabel 3900 6250 2    50   Input ~ 0
 rate_A
-Text GLabel 3900 7450 2    50   Input ~ 0
+Text GLabel 3900 7550 2    50   Input ~ 0
 rate_B
 Text GLabel 3900 6350 2    50   Input ~ 0
 depth_A
-Text GLabel 3900 7550 2    50   Input ~ 0
+Text GLabel 3900 7450 2    50   Input ~ 0
 depth_B
 Text GLabel 3900 6450 2    50   Input ~ 0
 shape_A
@@ -2059,27 +2059,27 @@ scaled_freq_CV
 $Comp
 L power:+3.3V #PWR030
 U 1 1 5D355975
-P 20250 12050
-F 0 "#PWR030" H 20250 11900 50  0001 C CNN
-F 1 "+3.3V" H 20265 12223 50  0000 C CNN
-F 2 "" H 20250 12050 50  0001 C CNN
-F 3 "" H 20250 12050 50  0001 C CNN
-	1    20250 12050
+P 20500 12050
+F 0 "#PWR030" H 20500 11900 50  0001 C CNN
+F 1 "+3.3V" H 20515 12223 50  0000 C CNN
+F 2 "" H 20500 12050 50  0001 C CNN
+F 3 "" H 20500 12050 50  0001 C CNN
+	1    20500 12050
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	20250 12050 20250 12100
+	20500 12050 20500 12100
 Wire Wire Line
-	20250 12700 20250 12750
+	20500 12700 20500 12750
 $Comp
 L Amplifier_Operational:MCP6002-xSN U6
 U 3 1 5D35598B
-P 20350 12400
-F 0 "U6" H 20308 12446 50  0000 L CNN
-F 1 "MCP6002-xSN" H 20308 12355 50  0000 L CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 20350 12400 50  0001 C CNN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf" H 20350 12400 50  0001 C CNN
-	3    20350 12400
+P 20600 12400
+F 0 "U6" H 20558 12446 50  0000 L CNN
+F 1 "MCP6002-xSN" H 20558 12355 50  0000 L CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 20600 12400 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf" H 20600 12400 50  0001 C CNN
+	3    20600 12400
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -2858,12 +2858,12 @@ $EndComp
 $Comp
 L power:GNDA #PWR0121
 U 1 1 6019F207
-P 20250 12750
-F 0 "#PWR0121" H 20250 12500 50  0001 C CNN
-F 1 "GNDA" H 20350 12550 50  0000 R CNN
-F 2 "" H 20250 12750 50  0001 C CNN
-F 3 "" H 20250 12750 50  0001 C CNN
-	1    20250 12750
+P 20500 12750
+F 0 "#PWR0121" H 20500 12500 50  0001 C CNN
+F 1 "GNDA" H 20600 12550 50  0000 R CNN
+F 2 "" H 20500 12750 50  0001 C CNN
+F 3 "" H 20500 12750 50  0001 C CNN
+	1    20500 12750
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -3254,53 +3254,9 @@ Text GLabel 7950 3400 0    50   Input ~ 0
 bypass_A
 Text GLabel 7950 3300 0    50   Input ~ 0
 bypass_B
-$Comp
-L Connector:Conn_01x02_Male J13
-U 1 1 5D9D6751
-P 2550 3950
-F 0 "J13" H 2658 4131 50  0000 C CNN
-F 1 "Conn_01x02_Male" H 2658 4040 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 2550 3950 50  0001 C CNN
-F 3 "~" H 2550 3950 50  0001 C CNN
-	1    2550 3950
-	-1   0    0    -1  
-$EndComp
-$Comp
-L Connector:Conn_01x02_Male J14
-U 1 1 5D9DD680
-P 2600 4550
-F 0 "J14" H 2708 4731 50  0000 C CNN
-F 1 "Conn_01x02_Male" H 2708 4640 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 2600 4550 50  0001 C CNN
-F 3 "~" H 2600 4550 50  0001 C CNN
-	1    2600 4550
-	-1   0    0    -1  
-$EndComp
-$Comp
-L power:GNDA #PWR025
-U 1 1 5DA42687
-P 2350 4050
-F 0 "#PWR025" H 2350 3800 50  0001 C CNN
-F 1 "GNDA" V 2355 3923 50  0000 R CNN
-F 2 "" H 2350 4050 50  0001 C CNN
-F 3 "" H 2350 4050 50  0001 C CNN
-	1    2350 4050
-	0    1    1    0   
-$EndComp
-$Comp
-L power:GNDA #PWR027
-U 1 1 5DA74470
-P 2400 4650
-F 0 "#PWR027" H 2400 4400 50  0001 C CNN
-F 1 "GNDA" V 2405 4523 50  0000 R CNN
-F 2 "" H 2400 4650 50  0001 C CNN
-F 3 "" H 2400 4650 50  0001 C CNN
-	1    2400 4650
-	0    1    1    0   
-$EndComp
-Text GLabel 2350 3950 0    50   Input ~ 0
+Text GLabel 2500 4200 0    50   Input ~ 0
 footswitch_A
-Text GLabel 2400 4550 0    50   Input ~ 0
+Text GLabel 2500 4300 0    50   Input ~ 0
 footswitch_B
 Wire Notes Line
 	1200 5250 3800 5250
@@ -3310,10 +3266,47 @@ Wire Notes Line
 	3800 3400 1200 3400
 Wire Notes Line
 	1200 3400 1200 5250
-Text Notes 2050 3350 0    157  ~ 31
-footswitches
-Text GLabel 7950 1500 0    50   Input ~ 0
+Text Notes 700  3400 0    157  ~ 31
+LED and footswitch connector
+Text GLabel 7950 1400 0    50   Input ~ 0
 footswitch_A
-Text GLabel 7950 1600 0    50   Input ~ 0
+Text GLabel 7950 1500 0    50   Input ~ 0
 footswitch_B
+Text GLabel 2500 4400 0    50   Input ~ 0
+LED_serial
+$Comp
+L power:+3.3V #PWR028
+U 1 1 5DE94BF3
+P 2500 4000
+F 0 "#PWR028" H 2500 3850 50  0001 C CNN
+F 1 "+3.3V" V 2500 4200 50  0000 C CNN
+F 2 "" H 2500 4000 50  0001 C CNN
+F 3 "" H 2500 4000 50  0001 C CNN
+	1    2500 4000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GNDA #PWR031
+U 1 1 5DE94BFD
+P 2500 4100
+F 0 "#PWR031" H 2500 3850 50  0001 C CNN
+F 1 "GNDA" V 2500 4000 50  0000 R CNN
+F 2 "" H 2500 4100 50  0001 C CNN
+F 3 "" H 2500 4100 50  0001 C CNN
+	1    2500 4100
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:Conn_01x05_Male J13
+U 1 1 5DFDCBF0
+P 2700 4200
+F 0 "J13" H 2672 4132 50  0000 R CNN
+F 1 "Conn_01x05_Male" H 2672 4223 50  0000 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical" H 2700 4200 50  0001 C CNN
+F 3 "~" H 2700 4200 50  0001 C CNN
+	1    2700 4200
+	-1   0    0    -1  
+$EndComp
+Text GLabel 7950 1600 0    50   Input ~ 0
+LED_serial
 $EndSCHEMATC
