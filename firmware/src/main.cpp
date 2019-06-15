@@ -15,18 +15,18 @@ enum LED
 
 #include "MCP4822.h"
 
-const int CS_1_PIN = 22;
-const int CS_2_PIN = 11;
+const int CS_1_PIN = 15;
+const int CS_2_PIN = 9;
 
 MCP4822 dac_1(CS_1_PIN, MCP4822::Full_Scale_Output::TWO_POINT_ZERO_FOUR_EIGHT_VOLTS);
 MCP4822 dac_2(CS_2_PIN, MCP4822::Full_Scale_Output::TWO_POINT_ZERO_FOUR_EIGHT_VOLTS);
 
 #include "CD74HC4067.h"
 
-const int MUX_S0 = 27;
-const int MUX_S1 = 26;
-const int MUX_S2 = 29;
-const int MUX_S3 = 30;
+const int MUX_S0 = 20;
+const int MUX_S1 = 19;
+const int MUX_S2 = 22;
+const int MUX_S3 = 23;
 const int MUX_COM = A7;
 
 CD74HC4067 mux(MUX_S0, MUX_S1, MUX_S2, MUX_S3, MUX_COM);
@@ -53,17 +53,17 @@ enum CV_SOURCE
     RATE_CV = 8
 };
 
-const int FOOTSWITCH_A_PIN = 5;
-const int FOOTSWITCH_B_PIN = 6;
+const int FOOTSWITCH_A_PIN = 3;
+const int FOOTSWITCH_B_PIN = 4;
 
-const int BYPASS_A_PIN = 25;
-const int BYPASS_B_PIN = 24;
+const int BYPASS_A_PIN = 18;
+const int BYPASS_B_PIN = 17;
 
-const int INVERT_B_SW_PIN = 8;
-const int SWEEP_MODE_SW1_PIN = 9;
-const int SWEEP_MODE_SW2_PIN = 10;
+const int INVERT_B_SW_PIN = 6;
+const int SWEEP_MODE_SW1_PIN = 7;
+const int SWEEP_MODE_SW2_PIN = 8;
 
-const int LED_SERIAL_PIN = 7;
+const int LED_SERIAL_PIN = 5;
 
 void setup()
 {
@@ -83,12 +83,33 @@ void setup()
     FastLED.addLeds<NEOPIXEL, LED_SERIAL_PIN>(led, NUM_LEDS);
 }
 
+bool toggle;
+
 void loop()
 {
-    mux.select(CV_SOURCE::DEPTH_A);
-    int depth_A = mux.analogReadCom();
+    mux.select(CV_SOURCE::ENV_B);
+    // int cv = mux.analogReadCom();
+    //
+    // dac_1.setOutput(MCP4822::Channel::A, cv << 2);
 
-    dac_1.setOutput(MCP4822::Channel::A, depth_A);
+    // write a quadrature ramp to dacs
+    const int full_scale = 1 << 12;
+    for (int i=0; i < full_scale; i+=32)
+    {
+        // dac_1.setOutput(MCP4822::Channel::A, i);
+        // dac_1.setOutput(MCP4822::Channel::B, i + 1024 % full_scale);
+        dac_2.setOutput(MCP4822::Channel::A, i + 2048 % full_scale);
+        dac_2.setOutput(MCP4822::Channel::B, i + 3072 % full_scale);
+        delay(1);
+
+        int cv = mux.analogReadCom();
+
+        dac_1.setOutput(MCP4822::Channel::B, cv << 2);
+    }
+
+    toggle = !toggle;
+
+    // digitalWrite(BYPASS_A_PIN, toggle);
 
     led[LED::A] = CHSV(3, 4, 5);
     FastLED.show();
