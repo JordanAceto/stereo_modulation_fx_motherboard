@@ -1,0 +1,12 @@
+
+silkscreen for L3 and C25 reversed! bad!!! -12V shorts to ground if you build it like this
+
+all choke footprints are wrong
+
+silkscreen for env A trim and env B trim are reversed, doh!
+
+doesn't quite fit in the hammond box I had in mind (it could with a little creative filing though)
+
+think hard about input voltage, 9V or 5V in?
+
+not really a problem, but think about replacing teensy with bare chip in some future rev
