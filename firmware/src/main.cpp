@@ -2,6 +2,10 @@
 
 #include <Arduino.h>
 
+#include "Phase_Accumulator.h"
+
+Phase_Accumulator pa(20e3);
+
 #include "FastLED.h"
 
 const int NUM_LEDS = 2;
@@ -87,6 +91,11 @@ bool toggle;
 
 void loop()
 {
+
+    pa.tick();
+
+    pa.getAccumulator();
+
     mux.select(CV_SOURCE::ENV_B);
     // int cv = mux.analogReadCom();
     //
