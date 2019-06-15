@@ -2,9 +2,13 @@
 
 #include <Arduino.h>
 
+#include "LFO.h"
+
 #include "Phase_Accumulator.h"
 
 #include "Waveshapers.h"
+
+LFO lfo(20e3);
 
 Phase_Accumulator pa(20e3);
 
@@ -101,6 +105,12 @@ void loop()
     pa.getAccumulator();
 
     sine_shaper->process(pa);
+
+    lfo.setFrequency(42);
+
+    lfo.tick();
+
+    lfo.getOutput();
 
     mux.select(CV_SOURCE::ENV_B);
     // int cv = mux.analogReadCom();
