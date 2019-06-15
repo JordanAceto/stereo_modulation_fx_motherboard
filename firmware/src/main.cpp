@@ -4,7 +4,11 @@
 
 #include "Phase_Accumulator.h"
 
+#include "Waveshapers.h"
+
 Phase_Accumulator pa(20e3);
+
+Waveshaper_Interface *sine_shaper = new Sine_Shaper();
 
 #include "FastLED.h"
 
@@ -95,6 +99,8 @@ void loop()
     pa.tick();
 
     pa.getAccumulator();
+
+    sine_shaper->process(pa);
 
     mux.select(CV_SOURCE::ENV_B);
     // int cv = mux.analogReadCom();

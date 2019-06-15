@@ -22,3 +22,18 @@ void Phase_Accumulator::tick()
 {
     accumulator += increment;
 }
+
+void Phase_Accumulator::reset()
+{
+    accumulator = 0;
+}
+
+const bool Phase_Accumulator::cycleHasCompleted() const
+{
+    bool accumulator_has_rolled_over = accumulator < last_accumulator;
+
+    if (accumulator_has_rolled_over)
+        last_accumulator = 0;
+
+    return accumulator_has_rolled_over;
+}
