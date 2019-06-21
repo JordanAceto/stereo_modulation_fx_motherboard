@@ -10,3 +10,5 @@ doesn't quite fit in the hammond box I had in mind (it could with a little creat
 think hard about input voltage, 9V or 5V in?
 
 not really a problem, but think about replacing teensy with bare chip in some future rev
+
+all the pots are backwards... not huge prob, can invert in software, but would be better the other way
