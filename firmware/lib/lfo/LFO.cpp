@@ -12,7 +12,9 @@ LFO::LFO(const double sample_rate) :
 LFO::~LFO()
 {
     for (auto shape : waveshape)
+    {
         delete shape;
+    }
 }
 
 void LFO::setFrequency(const double f)
@@ -27,5 +29,5 @@ void LFO::tick()
 
 double LFO::getOutput() const
 {
-    return waveshape[SINE]->process(core);
+    return waveshape[TRIANGLE]->process(core);
 }
