@@ -36,4 +36,8 @@ class Naive_Square_Shaper : public Waveshaper_Interface
 class Random_Shaper : public Waveshaper_Interface
 {
     virtual double process(const Phase_Accumulator &core) const override;
+
+private:
+    mutable double random_sample;
+    mutable uint32_t last_accumulator;
 };

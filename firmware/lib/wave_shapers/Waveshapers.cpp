@@ -46,17 +46,16 @@ double Naive_Square_Shaper::process(const Phase_Accumulator &core) const
 
 double Random_Shaper::process(const Phase_Accumulator &core) const
 {
-    static double random_sample = 0.0;
+    // shifting the accumulator makes the random sample trigger
+    // more often, which feels better
+    uint32_t this_accumulator = core.getAccumulator() << 2;
 
-    static uint32_t last_accumulator = 2 << 8; // initialze so that it won't get stuck at zero
-
-    uint32_t this_accumulator = core.getAccumulator();
-
-    bool accumulator_rolled_over = this_accumulator < last_accumulator;
+    bool accumulator_rolled_over = (this_accumulator < last_accumulator);
 
     if (accumulator_rolled_over)
     {
         random_sample = (double)rand() / RAND_MAX * 2.0 - 1.0;
+        last_accumulator = 0;
     }
 
     last_accumulator = this_accumulator;
