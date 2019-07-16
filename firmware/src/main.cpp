@@ -208,9 +208,12 @@ void loop()
         int32_t manual_freq = getBipolarCVsource(CV_SOURCE::MANUAL_FREQ);
         int32_t separation = getBipolarCVsource(CV_SOURCE::SEPARATION) >> 1;
 
-        int32_t lfo_A = (LFO_A.getOutput() + 1.0) * ((2 << 10) - 1) - HALF_SCALE;
+        double lfo_A_scanner_position = (double)getUnipolarCVsource(CV_SOURCE::SHAPE_A) / FULL_SCALE;
+        double lfo_B_scanner_position = (double)getUnipolarCVsource(CV_SOURCE::SHAPE_B) / FULL_SCALE;
+
+        int32_t lfo_A = (LFO_A.getOutput(lfo_A_scanner_position) + 1.0) * ((2 << 10) - 1) - HALF_SCALE;
         int32_t depth_A = getUnipolarCVsource(CV_SOURCE::DEPTH_A);
-        int32_t lfo_B = (LFO_B.getOutput() + 1.0) * ((2 << 10) - 1) - HALF_SCALE;
+        int32_t lfo_B = (LFO_B.getOutput(lfo_B_scanner_position) + 1.0) * ((2 << 10) - 1) - HALF_SCALE;
         int32_t depth_B = getUnipolarCVsource(CV_SOURCE::DEPTH_B);
 
         int32_t CV_A = 0;
