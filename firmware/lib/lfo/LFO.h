@@ -4,6 +4,8 @@
 
 #include "Waveshapers.h"
 
+#include "scanner.h"
+
 class LFO
 {
 public:
@@ -14,8 +16,8 @@ public:
     void tick();
 
     void setFrequency(const double f);
-    
-    double getOutput() const;
+
+    double getOutput(double scanner_position);
 
 
 private:
@@ -32,4 +34,7 @@ private:
     };
 
     Waveshaper_Interface *waveshape[NUM_LFO_SHAPES];
+
+    Scanner scanner;
+
 };

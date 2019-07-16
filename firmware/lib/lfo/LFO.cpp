@@ -1,7 +1,7 @@
 #include "LFO.h"
 
 LFO::LFO(const double sample_rate) :
-    core(sample_rate)
+    core(sample_rate), scanner(NUM_LFO_SHAPES)
 {
     waveshape[TRIANGLE] = new Naive_Triangle_Shaper;
     waveshape[SINE]     = new Sine_Shaper;
@@ -27,7 +27,12 @@ void LFO::tick()
     core.tick();
 }
 
-double LFO::getOutput() const
+double LFO::getOutput(double scanner_position)
 {
-    return waveshape[TRIANGLE]->process(core);
+    for (int i = 0; i < NUM_LFO_SHAPES; i++)
+    {
+        scanner.setInput(i, waveshape[i]->process(core));
+    }
+
+    return scanner.process(scanner_position);
 }
